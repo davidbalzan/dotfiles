@@ -78,6 +78,7 @@ dotfiles/
 ├── wofi/            # App launcher
 ├── scripts/         # Utility scripts
 ├── tmux/            # Terminal multiplexer
+├── matugen/         # Wallpaper-based color generation templates
 ├── zsh/             # Shell config
 ├── packages.txt     # Explicit pacman packages
 └── install.sh       # Stow-based installer
