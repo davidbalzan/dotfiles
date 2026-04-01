@@ -105,8 +105,12 @@ cd ~/dotfiles
 
 Uses [GNU Stow](https://www.gnu.org/software/stow/) to create symlinks from the repo into `$HOME`. Running `stow -D <package>` in the repo directory will cleanly remove the symlinks.
 
-## Hardware
+## Portability
 
-- ASUS laptop
-- NVIDIA GPU (nvidia-open driver)
-- 2560x1440 165Hz display
+Most of this config is hardware-agnostic. A few files may need adjusting on different machines:
+
+- **`monitors.conf`** — resolution, refresh rate, and scaling
+- **`environment.conf`** — GPU-specific env vars (e.g. NVIDIA vs AMD/Intel)
+- **`autostart.conf`** — vendor-specific tools (e.g. `asusctl` for ASUS keyboards)
+
+Everything else (Waybar, Alacritty, theming, matugen, scripts, zsh, tmux) works on any Arch + Hyprland setup.
