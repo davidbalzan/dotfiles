@@ -17,7 +17,7 @@ fi
 data=$(curl -sf "https://wttr.in/${LOCATION}?format=j1" 2>/dev/null)
 
 if [[ -z "$data" ]]; then
-    echo '{"text": " --°C", "tooltip": "Weather unavailable", "class": "clear"}'
+    echo '{"text": "☁ --°C", "tooltip": "Weather unavailable", "class": "clear"}'
     exit 0
 fi
 
@@ -27,36 +27,24 @@ humidity=$(echo "$data" | jq -r '.current_condition[0].humidity')
 desc=$(echo "$data" | jq -r '.current_condition[0].weatherDesc[0].value')
 wind=$(echo "$data" | jq -r '.current_condition[0].windspeedKmph')
 
-# Pick icon based on weather code
-code=$(echo "$data" | jq -r '.current_condition[0].weatherCode')
-case "$code" in
-    113) icon="" ;;                          # Clear/Sunny
-    116) icon="" ;;                          # Partly cloudy
-    119|122) icon="" ;;                      # Cloudy/Overcast
-    143|248|260) icon="" ;;                  # Fog/Mist
-    176|263|266|293|296) icon="" ;;          # Light rain/drizzle
-    299|302|305|308|356|359) icon="" ;;      # Heavy rain
-    200|386|389|392|395) icon="" ;;          # Thunder
-    179|182|185|227|230) icon="" ;;          # Snow/sleet
-    311|314|317|320|323|326|329|332|335|338|350|368|371|374|377) icon="" ;; # Snow
-    *) icon="" ;;
-esac
-
-# Map weather code to icon
+# Map weather code to emoji
 weather_icon() {
     case "$1" in
-        113) echo "" ;;
-        116) echo "" ;;
-        119|122) echo "" ;;
-        143|248|260) echo "" ;;
-        176|263|266|293|296) echo "" ;;
-        299|302|305|308|356|359) echo "" ;;
-        200|386|389|392|395) echo "" ;;
-        179|182|185|227|230) echo "" ;;
-        311|314|317|320|323|326|329|332|335|338|350|368|371|374|377) echo "" ;;
-        *) echo "" ;;
+        113) echo "☀️" ;;                          # Clear/Sunny
+        116) echo "⛅" ;;                          # Partly cloudy
+        119|122) echo "☁️" ;;                      # Cloudy/Overcast
+        143|248|260) echo "🌫️" ;;                  # Fog/Mist
+        176|263|266|293|296) echo "🌦️" ;;          # Light rain/drizzle
+        299|302|305|308|356|359) echo "🌧️" ;;      # Heavy rain
+        200|386|389|392|395) echo "⛈️" ;;          # Thunder
+        179|182|185|227|230) echo "🌨️" ;;          # Snow/sleet
+        311|314|317|320|323|326|329|332|335|338|350|368|371|374|377) echo "❄️" ;; # Snow
+        *) echo "🌡️" ;;
     esac
 }
+
+code=$(echo "$data" | jq -r '.current_condition[0].weatherCode')
+icon=$(weather_icon "$code")
 
 # Build forecast tooltip
 forecast=""
@@ -72,12 +60,12 @@ done
 
 tooltip="${icon}  ${desc} ${temp}°C
 Feels like ${feels}°C
-  ${humidity}%    ${wind} km/h
+💧 ${humidity}%   💨 ${wind} km/h
 
 ${forecast}"
 
 result=$(jq -nc \
-    --arg text "$icon  ${temp}°C" \
+    --arg text "$icon ${temp}°C" \
     --arg tooltip "$tooltip" \
     --arg class "weather" \
     '{text: $text, tooltip: $tooltip, class: $class}')

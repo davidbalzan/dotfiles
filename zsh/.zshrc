@@ -28,12 +28,13 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Tools
 eval "$(fzf --zsh)"
-eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 # Autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Syntax highlighting (must be at end of .zshrc)
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias code="codium"
+
+# These must be at the end of .zshrc
+eval "$(zoxide init zsh)"
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

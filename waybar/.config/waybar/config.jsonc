@@ -22,23 +22,23 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "6": "",
-            "7": "",
-            "8": "",
-            "9": "",
-            "10": "",
-            "active": "",
-            "default": ""
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": "",
+            "active": "",
+            "default": ""
         },
         "on-click": "activate"
     },
     "clock": {
-        "format": "  {:%a %d %b   %H:%M}",
+        "format": "  {:%a %d %b   %H:%M}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "month",
@@ -56,37 +56,37 @@
     "battery": {
         "format": "{icon}  {capacity}%",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "",
+            "",
+            "",
+            "",
+            ""
         ],
-        "format-charging": "  {capacity}%",
+        "format-charging": "  {capacity}%",
         "states": {
             "warning": 30,
             "critical": 15
         }
     },
     "network": {
-        "format-wifi": "  {essid}",
-        "format-disconnected": "  offline",
+        "format-wifi": "  {essid}",
+        "format-disconnected": "  offline",
         "tooltip-format": "{ipaddr} | {signalStrength}%"
     },
     "pulseaudio": {
         "format": "{icon}  {volume}%",
-        "format-muted": "  muted",
+        "format-muted": "  muted",
         "format-icons": {
             "default": [
-                "",
-                "",
-                ""
+                "",
+                "",
+                ""
             ]
         },
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
     "backlight": {
-        "format": "  {percent}%"
+        "format": "  {percent}%"
     },
     "tray": {
         "spacing": 10
@@ -101,12 +101,12 @@
         "exec": "df -h / | awk 'NR==2 {printf \"{\\\"text\\\": \\\"%s/%s\\\", \\\"tooltip\\\": \\\"Root: %s used of %s (%s)\\\", \\\"percentage\\\": %d}\", $3, $2, $3, $2, $5, substr($5,1,length($5)-1)}'",
         "return-type": "json",
         "interval": 60,
-        "format": "  {}"
+        "format": "  {}"
     },
     "custom/disk-data": {
         "exec": "df -h /mnt/data | awk 'NR==2 {printf \"{\\\"text\\\": \\\"%s/%s\\\", \\\"tooltip\\\": \\\"Data: %s used of %s (%s)\\\", \\\"percentage\\\": %d}\", $3, $2, $3, $2, $5, substr($5,1,length($5)-1)}'",
         "return-type": "json",
         "interval": 60,
-        "format": "  {}"
+        "format": "  {}"
     }
 }
