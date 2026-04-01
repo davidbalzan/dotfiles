@@ -1,0 +1,72 @@
+/* wlogout style — dark minimal, JetBrains Mono */
+
+* {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    background: transparent;
+}
+
+window {
+    background-color: rgba(17, 17, 27, 0.85);
+    backdrop-filter: blur(12px);
+}
+
+button {
+    background-color: rgba(30, 30, 46, 0.75);
+    color: #cdd6f4;
+    border: 1px solid rgba(137, 180, 250, 0.15);
+    border-radius: 12px;
+    margin: 20px;
+    padding: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+    background-color: rgba(137, 180, 250, 0.18);
+    border-color: rgba(137, 180, 250, 0.5);
+    color: #89b4fa;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+    border-color: rgba(137, 180, 250, 0.6);
+    background-color: rgba(137, 180, 250, 0.12);
+}
+
+/* Per-button accent colors on hover */
+
+#lock:hover {
+    border-color: rgba(166, 227, 161, 0.5);
+    color: #a6e3a1;
+    background-color: rgba(166, 227, 161, 0.12);
+}
+
+#logout:hover {
+    border-color: rgba(243, 139, 168, 0.5);
+    color: #f38ba8;
+    background-color: rgba(243, 139, 168, 0.12);
+}
+
+#suspend:hover {
+    border-color: rgba(250, 179, 135, 0.5);
+    color: #fab387;
+    background-color: rgba(250, 179, 135, 0.12);
+}
+
+#reboot:hover {
+    border-color: rgba(249, 226, 175, 0.5);
+    color: #f9e2af;
+    background-color: rgba(249, 226, 175, 0.12);
+}
+
+#shutdown:hover {
+    border-color: rgba(243, 139, 168, 0.5);
+    color: #f38ba8;
+    background-color: rgba(243, 139, 168, 0.18);
+}

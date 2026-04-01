@@ -20,8 +20,8 @@ apply_theme() {
     hyprctl hyprpaper preload "$WALL" 2>/dev/null
     hyprctl hyprpaper wallpaper ",$WALL" 2>/dev/null
 
-    # Generate colors with matugen
-    matugen image "$WALL" --prefer saturation 2>/dev/null
+    # Generate colors with matugen (avoids red-ish primaries)
+    WALL="$WALL" ~/.local/bin/matugen-safe.sh "$WALL"
 
     # Source new Hyprland colors (border colors update)
     hyprctl reload 2>/dev/null
@@ -51,6 +51,12 @@ apply_theme() {
     gsettings set org.gnome.desktop.interface gtk-theme '' 2>/dev/null
     gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' 2>/dev/null
 
+    # Update VSCodium colors
+    python3 ~/.local/bin/update-vscode-colors.py 2>/dev/null
+
+    # Reload tmux colors
+    tmux source-file ~/.tmux.conf 2>/dev/null
+
     notify-send "Theme" "Applied colors from $(basename "$WALL")" -t 2000
 }
 
@@ -76,12 +82,9 @@ case "${1:-next}" in
         apply_theme "${WALLS[$INDEX]}"
         ;;
     select)
-        mapfile -t WALLS < <(get_walls)
-        NAMES=()
-        for w in "${WALLS[@]}"; do NAMES+=("$(basename "$w")"); done
-        CHOICE=$(printf '%s\n' "${NAMES[@]}" | wofi --dmenu --prompt "Wallpaper")
-        [ -z "$CHOICE" ] && exit 0
-        apply_theme "$WALLDIR/$CHOICE"
+        # Visual picker is now handled by wallpaper-select.sh
+        # Fallback: call it directly
+        exec ~/.local/bin/wallpaper-select.sh
         ;;
     set)
         [ -z "$2" ] && echo "Usage: wallpaper-theme.sh set <path>" && exit 1

@@ -1,0 +1,63 @@
+@import "colors-generated.rasi"
+
+window {
+    width:            80%;
+    height:           70%;
+    background-color: @bg;
+    border:           2px;
+    border-color:     @border-col;
+    border-radius:    16px;
+    padding:          0;
+}
+
+mainbox {
+    background-color: @transparent;
+    children:         [ listview ];
+}
+
+listview {
+    columns:          5;
+    lines:            3;
+    flow:             horizontal;
+    spacing:          10px;
+    padding:          16px;
+    background-color: @transparent;
+    scrollbar:        false;
+}
+
+element {
+    orientation:      vertical;
+    padding:          8px;
+    border-radius:    12px;
+    background-color: @transparent;
+    cursor:           pointer;
+}
+
+element selected {
+    background-color: @accent-bg;
+    border:           1px;
+    border-color:     @border-col;
+}
+
+element-icon {
+    size:             180px;
+    border-radius:    8px;
+    background-color: @transparent;
+    cursor:           inherit;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    font:             "JetBrains Mono 9";
+    color:            @fg-dim;
+    background-color: @transparent;
+    cursor:           inherit;
+}
+
+element selected element-text {
+    color:            @accent;
+}
+
+inputbar {
+    enabled:          false;
+}

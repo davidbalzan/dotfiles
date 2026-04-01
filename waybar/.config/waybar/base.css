@@ -26,6 +26,8 @@ window#waybar > box {
 
 /* --- Shared module style --- */
 #custom-weather,
+#custom-disk-root,
+#custom-disk-data,
 #clock,
 #battery,
 #network,

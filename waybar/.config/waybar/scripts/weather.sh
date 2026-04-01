@@ -42,17 +42,39 @@ case "$code" in
     *) icon="" ;;
 esac
 
+# Map weather code to icon
+weather_icon() {
+    case "$1" in
+        113) echo "" ;;
+        116) echo "" ;;
+        119|122) echo "" ;;
+        143|248|260) echo "" ;;
+        176|263|266|293|296) echo "" ;;
+        299|302|305|308|356|359) echo "" ;;
+        200|386|389|392|395) echo "" ;;
+        179|182|185|227|230) echo "" ;;
+        311|314|317|320|323|326|329|332|335|338|350|368|371|374|377) echo "" ;;
+        *) echo "" ;;
+    esac
+}
+
 # Build forecast tooltip
 forecast=""
 for i in 0 1 2; do
     day=$(echo "$data" | jq -r ".weather[$i].date")
     hi=$(echo "$data" | jq -r ".weather[$i].maxtempC")
     lo=$(echo "$data" | jq -r ".weather[$i].mintempC")
-    d=$(echo "$data" | jq -r ".weather[$i].hourly[4].weatherDesc[0].value")
-    forecast+="${day}  ${lo}°/${hi}°  ${d}\n"
+    fcode=$(echo "$data" | jq -r ".weather[$i].hourly[4].weatherCode")
+    ficon=$(weather_icon "$fcode")
+    forecast+="${day}  ${ficon}  ${lo}°/${hi}°
+"
 done
 
-tooltip="${desc} ${temp}°C\nFeels like ${feels}°C\nHumidity ${humidity}%  Wind ${wind} km/h\n\n${forecast}"
+tooltip="${icon}  ${desc} ${temp}°C
+Feels like ${feels}°C
+  ${humidity}%    ${wind} km/h
+
+${forecast}"
 
 result=$(jq -nc \
     --arg text "$icon  ${temp}°C" \

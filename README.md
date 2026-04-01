@@ -14,22 +14,33 @@ My Arch Linux + Hyprland rice. ASUS laptop with NVIDIA, Catppuccin-inspired them
 | Bar | [Waybar](https://github.com/Alexays/Waybar) |
 | Terminal | [Alacritty](https://alacritty.org) |
 | Shell | zsh + [Starship](https://starship.rs) |
-| Launcher | [Wofi](https://hg.sr.ht/~scoopta/wofi) |
+| Launcher | [Wofi](https://hg.sr.ht/~scoopta/wofi) + [Rofi](https://github.com/lbonn/rofi) (visual pickers) |
 | Notifications | [Mako](https://github.com/emersion/mako) |
 | Wallpaper | [Hyprpaper](https://github.com/hyprwm/hyprpaper) |
-| Theming | [Matugen](https://github.com/InioX/matugen) |
+| Theming | [Matugen](https://github.com/InioX/matugen) (wallpaper-driven) |
+| Lock | [Hyprlock](https://github.com/hyprwm/hyprlock) |
 | Idle | [Hypridle](https://github.com/hyprwm/hypridle) |
+| Logout | [Wlogout](https://github.com/ArtsyMacaw/wlogout) |
 | File Manager | Thunar |
 | Browser | Google Chrome |
 
 ## Features
 
-- **Light/dark theme toggle** with auto-propagation to Waybar, Alacritty, Wofi, and Mako
-- **Wallpaper-driven theming** — colors extracted from wallpapers via `matugen`
+- **Wallpaper-driven theming** — colors extracted from wallpapers via `matugen` and propagated to Hyprland, Waybar, Alacritty, Mako, Wofi, Rofi, GTK/Thunar, Papirus folder icons, tmux, and VSCodium
+- **Red avoidance** — intelligent color fallback when wallpaper produces red-ish primary colors
+- **Visual wallpaper picker** — rofi grid with 200px thumbnails, single-click to select and apply
 - **Animation presets** — switch between smooth, snappy, and minimal animation profiles
-- **Unattended mode** — one-key toggle for low-power operation (dims screen, power-saver CPU, pauses tray apps)
+- **Game mode** — one-key toggle to disable animations, blur, gaps, and opacity for gaming
+- **Lock screen** — hyprlock with wallpaper background and adaptive colors
+- **Logout menu** — wlogout with lock, logout, suspend, reboot, and shutdown
+- **Screen recording** — toggle wf-recorder with region selection
+- **Color picker** — hyprpicker with auto clipboard copy
+- **Emoji picker** — rofi-based emoji grid
+- **Window opacity rules** — tiered transparency: browsers 90%, terminals 85%, media 80%
+- **Idle inhibit** — fullscreen browsers and media players prevent screen lock
+- **Disk space** — root and data partition usage in Waybar
 - **Modular Hyprland config** — split into focused files (monitors, keybindings, appearance, etc.)
-- **Glassmorphism** — blur on Waybar and Wofi for a translucent look
+- **Glassmorphism** — blur on Waybar, Wofi, Mako, and SwayOSD
 
 ## Keybindings
 
@@ -45,11 +56,18 @@ My Arch Linux + Hyprland rice. ASUS laptop with NVIDIA, Catppuccin-inspired them
 | `Super + Shift + H/J/K/L` | Move window |
 | `Super + 1-0` | Switch workspace |
 | `Super + W` | Next wallpaper + theme |
-| `Super + Shift + W` | Select wallpaper |
+| `Super + Shift + W` | Visual wallpaper picker |
 | `Super + A` | Cycle animation preset |
+| `Super + G` | Toggle game mode |
+| `Super + L` | Lock screen |
+| `Super + Shift + E` | Logout menu |
 | `Super + U` | Toggle unattended mode |
 | `Super + V` | Clipboard history |
 | `Super + S` | Scratchpad |
+| `Super + .` | Emoji picker |
+| `Super + Shift + C` | Color picker |
+| `Super + Shift + R` | Toggle screen recording |
+| `Super + Ctrl + R` | Reload config |
 | `Super + /` | Keybinding cheat sheet |
 | `Print` | Screenshot (region) |
 | `Shift + Print` | Screenshot (full) |

@@ -26,6 +26,7 @@ hypridle
 hyprland
 hyprlock
 hyprpaper
+hyprpicker
 imagemagick
 jq
 libgsf
@@ -53,6 +54,7 @@ polkit-gnome
 poppler-glib
 remmina
 ripgrep
+rofi-wayland
 rsync
 sddm
 slurp
@@ -78,6 +80,7 @@ vscodium
 vulkan-radeon
 waybar
 wev
+wf-recorder
 wireplumber
 wl-clipboard
 woff2-font-awesome

@@ -27,6 +27,8 @@ window#waybar > box {
 
 /* --- Shared module style --- */
 #custom-weather,
+#custom-disk-root,
+#custom-disk-data,
 #clock,
 #battery,
 #network,
@@ -79,6 +81,14 @@ window#waybar > box {
 
 #tray {
     color: {{colors.on_surface_variant.default.hex}};
+}
+
+#custom-disk-root {
+    color: {{colors.secondary.default.hex}};
+}
+
+#custom-disk-data {
+    color: {{colors.tertiary.default.hex}};
 }
 
 /* --- Tooltip --- */
