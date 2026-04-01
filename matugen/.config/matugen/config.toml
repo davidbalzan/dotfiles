@@ -1,0 +1,35 @@
+[config]
+scheme_type = "scheme-tonal-spot"
+contrast = 0.0
+
+[templates.hyprland-colors]
+input_path = "~/.config/matugen/templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/colors.conf"
+
+[templates.waybar-colors]
+input_path = "~/.config/matugen/templates/waybar-colors.css"
+output_path = "~/.config/waybar/themes/generated.css"
+
+[templates.alacritty-colors]
+input_path = "~/.config/matugen/templates/alacritty-colors.toml"
+output_path = "~/.config/alacritty/colors-generated.toml"
+
+[templates.mako-colors]
+input_path = "~/.config/matugen/templates/mako-colors"
+output_path = "~/.config/mako/colors-generated"
+
+[templates.wofi-colors]
+input_path = "~/.config/matugen/templates/wofi-colors.css"
+output_path = "~/.config/wofi/colors-generated.css"
+
+[templates.rofi-colors]
+input_path = "~/.config/matugen/templates/rofi-colors.rasi"
+output_path = "~/.config/rofi/colors-generated.rasi"
+
+[templates.gtk3-colors]
+input_path = "~/.config/matugen/templates/gtk-colors.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
+
+[templates.gtk4-colors]
+input_path = "~/.config/matugen/templates/gtk-colors.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
