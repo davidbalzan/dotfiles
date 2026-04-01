@@ -6,7 +6,7 @@
 set -e
 
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
-PACKAGES=(hypr waybar alacritty mako wofi scripts zsh)
+PACKAGES=(hypr waybar alacritty mako wofi scripts zsh tmux)
 
 install_packages() {
     local targets=("$@")

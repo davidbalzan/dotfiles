@@ -77,6 +77,7 @@ dotfiles/
 ├── mako/            # Notifications
 ├── wofi/            # App launcher
 ├── scripts/         # Utility scripts
+├── tmux/            # Terminal multiplexer
 ├── zsh/             # Shell config
 ├── packages.txt     # Explicit pacman packages
 └── install.sh       # Stow-based installer
