@@ -1,0 +1,9 @@
+show=drun
+width=450
+height=400
+always_parsed=true
+allow_images=true
+image_size=36
+prompt=
+insensitive=true
+layer=overlay

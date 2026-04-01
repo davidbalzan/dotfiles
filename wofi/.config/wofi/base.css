@@ -1,0 +1,44 @@
+window {
+    font-family: "JetBrains Mono";
+    font-size: 13px;
+    border-radius: 14px;
+}
+
+#input {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin: 12px;
+    font-size: 14px;
+}
+
+#inner-box {
+    margin: 0 8px 8px 8px;
+}
+
+#outer-box {
+    padding: 0;
+}
+
+#scroll {
+    margin: 0;
+}
+
+#entry {
+    padding: 10px 14px;
+    margin: 2px 0;
+    border-radius: 10px;
+}
+
+#entry:selected {
+    border: 1px solid rgba(137, 180, 250, 0.2);
+}
+
+#img {
+    margin-right: 10px;
+}
+
+#text {
+    color: inherit;
+    margin-left: 4px;
+}

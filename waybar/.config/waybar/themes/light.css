@@ -1,0 +1,131 @@
+* {
+    font-family: "JetBrains Mono", "Font Awesome 7 Free Solid", "Font Awesome 7 Free", "Font Awesome 7 Brands";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #4c4f69;
+}
+
+window#waybar > box {
+    background: rgba(239, 241, 245, 0.88);
+    border: 1px solid rgba(30, 102, 245, 0.15);
+    border-radius: 12px;
+    margin: 6px 8px 0 8px;
+    padding: 0 8px;
+}
+
+/* --- Workspaces --- */
+#workspaces button {
+    padding: 0 10px;
+    color: #9ca0b0;
+    border: none;
+    border-radius: 8px;
+    margin: 4px 2px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    color: #1e66f5;
+    background: rgba(30, 102, 245, 0.12);
+}
+
+#workspaces button:hover {
+    color: #7287fd;
+    background: rgba(30, 102, 245, 0.08);
+}
+
+/* --- Shared module style --- */
+#custom-weather,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#backlight,
+#tray {
+    padding: 0 12px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+}
+
+#custom-weather:hover,
+#clock:hover,
+#battery:hover,
+#network:hover,
+#pulseaudio:hover,
+#backlight:hover {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+/* --- Individual modules --- */
+#clock {
+    color: #1343b5;
+    font-weight: bold;
+}
+
+#custom-weather {
+    color: #bc4a06;
+}
+
+#battery {
+    color: #2d7220;
+}
+
+#battery.charging {
+    color: #2d7220;
+}
+
+#battery.warning:not(.charging) {
+    color: #bc4a06;
+}
+
+#battery.critical:not(.charging) {
+    color: #a80d2e;
+}
+
+#network {
+    color: #6428b8;
+}
+
+#network.disconnected {
+    color: #7c7f8e;
+}
+
+#pulseaudio {
+    color: #a56a14;
+}
+
+#pulseaudio.muted {
+    color: #7c7f8e;
+}
+
+#backlight {
+    color: #b44d9e;
+}
+
+#tray {
+    color: #6c6f85;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+/* --- Tooltip --- */
+tooltip {
+    background: rgba(239, 241, 245, 0.95);
+    border: 1px solid rgba(30, 102, 245, 0.15);
+    border-radius: 10px;
+    padding: 8px 12px;
+}
+
+tooltip label {
+    color: #4c4f69;
+    font-size: 12px;
+}

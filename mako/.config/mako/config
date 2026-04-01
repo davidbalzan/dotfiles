@@ -1,0 +1,18 @@
+include=~/.config/mako/colors-generated
+font=JetBrains Mono 11
+border-size=1
+border-radius=12
+padding=14
+margin=8
+width=350
+max-visible=3
+default-timeout=5000
+layer=overlay
+anchor=top-right
+
+[urgency=low]
+border-color=#31324480
+
+[urgency=high]
+border-color=#f38ba880
+default-timeout=10000

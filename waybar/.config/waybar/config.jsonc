@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "spacing": 4,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "custom/weather",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "network",
+        "tray"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        },
+        "on-click": "activate"
+    },
+    "clock": {
+        "format": "  {:%a %d %b   %H:%M}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#89b4fa'><b>{}</b></span>",
+                "days": "<span color='#cdd6f4'>{}</span>",
+                "weeks": "<span color='#6c7086'>W{}</span>",
+                "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+                "today": "<span color='#a6e3a1'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "battery": {
+        "format": "{icon}  {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format-charging": "  {capacity}%",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
+    },
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-disconnected": "  offline",
+        "tooltip-format": "{ipaddr} | {signalStrength}%"
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "  muted",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    "backlight": {
+        "format": "  {percent}%"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "custom/weather": {
+        "exec": "~/.config/waybar/scripts/weather.sh",
+        "return-type": "json",
+        "interval": 1800,
+        "tooltip": true
+    }
+}
