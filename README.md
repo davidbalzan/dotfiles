@@ -17,6 +17,7 @@ My Arch Linux + Hyprland rice. ASUS laptop with NVIDIA, Catppuccin-inspired them
 | Launcher | [Wofi](https://hg.sr.ht/~scoopta/wofi) |
 | Notifications | [Mako](https://github.com/emersion/mako) |
 | Wallpaper | [Hyprpaper](https://github.com/hyprwm/hyprpaper) |
+| Theming | [Matugen](https://github.com/InioX/matugen) |
 | Idle | [Hypridle](https://github.com/hyprwm/hypridle) |
 | File Manager | Thunar |
 | Browser | Google Chrome |
