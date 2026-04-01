@@ -22,6 +22,10 @@ output_path = "~/.config/mako/colors-generated"
 input_path = "~/.config/matugen/templates/wofi-colors.css"
 output_path = "~/.config/wofi/colors-generated.css"
 
+[templates.vscode-colors]
+input_path = "~/.config/matugen/templates/vscode-colors.json"
+output_path = "~/.cache/hypr-theme/vscode-colors.json"
+
 [templates.rofi-colors]
 input_path = "~/.config/matugen/templates/rofi-colors.rasi"
 output_path = "~/.config/rofi/colors-generated.rasi"
